@@ -7,6 +7,8 @@ const wss = new WebSocketServer({ port: config.port });
 console.log(`✅ WebSocket server running on ws://localhost:${config.port}`);
 
 wss.on("connection", (ws) => {
+  console.log("New Client Connected");
+
   ws.on("message", (message) => {
     console.log(`Received: ${message}`);
 
